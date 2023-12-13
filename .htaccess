@@ -1,0 +1,35 @@
+
+#ErrorDocument 400 /error
+#ErrorDocument 401 /error
+#ErrorDocument 403 /error
+#ErrorDocument 404 /error
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /projects/
+
+    # Redirect requests to non-existent files or directories to login.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^([^\.]+)$ $1.php [NC,L]
+</IfModule>
+
+
+ServerSignature Off
+
+<FilesMatch "\.(inc|mo|toml|js|log|bat|txt)$">
+    Deny from all
+</FilesMatch>
+
+# allowd files 
+<FilesMatch "\.(php|html?)$">
+    Allow from all
+</FilesMatch>
+
+# allowed text file for SEO
+<Files "robots.txt">
+    Allow from all
+</Files>
+
+
+

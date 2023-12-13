@@ -1,0 +1,10 @@
+# do_html_footer 13
+do_html_url 7
+display_user_menu 4
+do_html_heading 3
+display_user_urls 
+display_recommended_urls
+display_registration_form 
+display_password_form
+display_site_info
+display_login_form 

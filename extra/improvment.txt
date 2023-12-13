@@ -1,0 +1,49 @@
+* add advance queries 
+* show website in ifrom in display_user_urls() function 
+* Additional error checking of user input
+* bind sql queries ✅
+* add body tag like meta tag in body function
+* need to see reset password through email section 
+* undo deleted bookmarks 
+* delete account 
+* need to set username unique in table user ✅ set primary means automatically set 
+* arragnge the code 
+
+
+
+
+/your_project_root
+│
+├── css
+│   └── style.css
+│
+├── images
+│   └── bookmark.gif
+│
+├── includes
+│   ├── add_bms.php
+│   ├── add_bms_form.php
+│   ├── bookmark_fns.php
+│   ├── change_passwd_form.php
+│   ├── data_valid_fns.php
+│   ├── db_fns.php
+│   ├── delete_bms.php
+│   ├── output_fns.php
+│   ├── recommend.php
+│   ├── url_fns.php
+│   ├── user_auth_fns.php
+│   └── header.php
+│
+├── scripts
+│   └── bookmarks.sql
+│
+├── templates
+│   ├── login.php
+│   ├── logout.php
+│   ├── member.php
+│   ├── forgot_passwd.php
+│   ├── register_form.php
+│   └── register_new.php
+│
+├── index.php
+└── test.php
