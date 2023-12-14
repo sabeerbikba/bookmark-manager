@@ -164,9 +164,10 @@ function notify_change_password($username)
         $mail->IsHTML(true);
         $mail->CharSet = 'UTF-8';
         //$mail->SMTPDebug = 2; 
-        $mail->Username = "sabeerbikba02@gmail.com";
-        $mail->Password = "lqbdbbuouorlwokj"; //sensitive 👁
-        $mail->SetFrom("sabeerbikba02@gmail.com");
+        // how to setup phpMailer : https://youtu.be/vswB4BMqqI8?si=wRVg99abPvwNiGEY
+        $mail->Username = "sabeerbikba02@gmail.com"; // change gmail address 
+        $mail->Password = "lqbdbbuouorlwokj"; // genrate using gmail account | https://myaccount.google.com/apppasswords
+        $mail->SetFrom("sabeerbikba02@gmail.com"); // change gmail address 
         $mail->Subject = $subject;
         $mail->Body = $msg;
         $mail->AddAddress($to);
@@ -208,8 +209,9 @@ function notify_change_password($username)
         $time = date('d-m-Y- H:i:s A');
 
         $msg = "Your PHPBookmark password has been changed at $time \r\nPlease notify if not you!";
+        $subject = 'PHPBookmark Password Change';
 
-        if (smtp_mailer($to, 'PHPBookmark Password Change', $msg)) {
+        if (smtp_mailer($to, $subject, $msg)) {
             return true;
         } else {
             throw new Exception('Could not send email.');
@@ -279,7 +281,7 @@ function get_random_word($min_length, $max_length)
 }
 
 
-//corrently this fucntion not working comment out because causing error to tother fucntion 
+//corrently this fucntion not using, comment out because causing error to to ther fucntion 
 // function notify_password($username, $password)
 // {
 //     //included PHPmailer library
